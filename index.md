@@ -13,7 +13,7 @@ Using modern C++ features and libraries, such as <random> for advanced random nu
 
 I will now dive into the code deeper and show you how Digital Rain brings traditional Irish weather to life on your screen!
 
-## Design and Test
+## Design 
 
 - The Rain class contains all the functionality required to simulate the weather effects. It includes methods for starting the simulation, displaying the start menu, drawing clouds, generating rain and sleet, playing thunder sounds, and clearing the screen. 
 
@@ -63,6 +63,29 @@ The <random> library is used for random number generation, which will be used to
 
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/problem1.png" width="500" height="400">
 
+## Test
+- For this project, I implemented a unit test to verify the functionality of the displayStartMenu() method in my Digital Rain Simulation. This method is responsible for displaying the start menu, where users can choose between different weather types.
+
+- Purpose of the Test
+The goal of this test is to ensure that the correct text appears when displayStartMenu() is called. Since this function prints to the console, I need to capture and verify its output.
+
+- How the Test Works
+
+Redirecting Console Output:
+Normally, std::cout prints directly to the console.
+The test redirects this output into a buffer (std::ostringstream), so we can check its contents.
+
+Running the Function:
+We create an instance of the Rain class.
+We call displayStartMenu(), which writes output to the buffer instead of the console.
+
+Verifying the Output:
+We check if the output contains key menu phrases like "Welcome to Digital Rain!", "Press 'S' for Sleet", and "Press 'H' for Heavy Rain".
+If these phrases exist, the test passes; otherwise, it fails.
+Restoring std::cout:
+
+After the test, we restore std::cout to ensure normal console behavior.
+If the test fails, the program throws an assertion error, helping us identify issues.
 
 
 
