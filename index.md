@@ -33,9 +33,15 @@ DrawClouds uses the GoToXY function. This function is used as a utility function
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/drawclouds.png" width="400" height="300">
 
 ## Algorithim
-The hConsole Hanfle gets the handle to the console output. The random generator (random_device and mt19937) is used to generate random numbers between 1 and 9. This is used to create random rain drops. The for loop for shifting the rain down shifts each row of the screen vector down by one position, which simulates downwards movement like rain falling from the sky. It generates new rain by clearing the top row and then randomly placing rain drops with the carachter ('|') with a 20% chance for each column (if dis(gen) < 2). The rain is then printed and a delay is implemented by pausing the loop for 100 milliseconds to control the animation speed. 
+- The hConsole Handle gets the handle to the console output. The random generator (random_device and mt19937) is used to generate random numbers between 1 and 9. This is used to create random rain drops. PlaySound is part of the <mmsystem.h> library. This is used to play a thunderSound which resembles the sound ehard when rain is heavy. If the user has speakers, they can hear it when heavy rain is generated! The SND_LOOP ensures the sound loops when its reached its length ensuring a good user experience always when in the console.
+
+- The for loop for shifting the rain down shifts each row of the screen vector down by one position (for (int i = HEIGHT -1; i > 0; --i), which simulates downwards movement like rain falling from the sky. It generates new rain by clearing the top row and then randomly placing rain drops with the carachter ('|') with a 20% chance for each column (if dis(gen) < 2). The rain is then printed and a delay is implemented by pausing the loop for 100 milliseconds to control the animation speed. The rain is also coloured dark blue using the SetConsoleTextAttribute. 
 
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/raingeneration.png" width="400" height="300">
+
+- generateSleet is similar to generateRain. Instead of shifting each row of the vector straight down, it shifts it down and to the right by one position, which simulates diagonal movement like sleet is.	(for (int i = HEIGHT - 1; i > 0; --i) { for (int j = 0; j < WIDTH - 1; j++) { screen[i][j + 1] = screen[i - 1][j]; }). The top row is cleared again and then the sleet is randomly placed with drops '\' or '/' with a 10% chance of rain, making it less heavy than heavier rain, like sleet is in real life. Its also a lighter colour than the heavy rain, appearing a light blue colour.
+
+<img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/sleetgeneration.png" width="400" height="300">
 
 
 ## Problem Solving
@@ -56,6 +62,3 @@ A bullet list:
 - algorithms
 - iterators
 
-You can add an impage that has been uploaded to the repository in a /docs/assets/images folder.
-
-<img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/Test.png" width="400" height="300">
