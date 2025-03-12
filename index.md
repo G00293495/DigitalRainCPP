@@ -17,7 +17,7 @@ The Rain class contains all the functionality required to simulate the weather e
 
 The constructor is initialized as a vector of strings. This Vector has a size of 20 and a width of 85, and it is filled with spaces (' '). This particular setup creates a blank screen of 20 rows and 85 columns, where each cell is originally empty. This is the foundation of displaying the rain and sleet. 
 
-<img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/constructor.png" width="600" height="300">
+<img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/constructor.png" width="400" height="200">
 
 The start menu is the first code that appears on the screen, presentening the user with an amusing start menu. This start menu has ASCII art to be visually appealing to the user, and it also provides text which prompts the user to enter 'H' for heavy rain and 'S' for sleet. 
 
