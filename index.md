@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A Project in Modern C++
+title: C++ Digital Rain
 tags: cpp coding project
 categories: demo
 ---
