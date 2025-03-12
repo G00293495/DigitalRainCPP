@@ -17,7 +17,7 @@ The Rain class contains all the functionality required to simulate the weather e
 
 The constructor is initialized as a vector of strings. This Vector has a size of 20 and a width of 85, and it is filled with spaces (' '). This particular setup creates a blank screen of 20 rows and 85 columns, where each cell is originally empty. This is the foundation of displaying the rain and sleet. 
 
-<img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/constructor.png" width="400" height="200">
+<img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/constructor.png" width="300" height="100">
 
 The start menu is the first code that appears on the screen, presentening the user with an amusing start menu. This start menu has ASCII art to be visually appealing to the user, and it also provides text which prompts the user to enter 'H' for heavy rain and 'S' for sleet. 
 
@@ -37,11 +37,11 @@ DrawClouds uses the GoToXY function. This function is used as a utility function
 
 - The for loop for shifting the rain down shifts each row of the screen vector down by one position (for (int i = HEIGHT -1; i > 0; --i), which simulates downwards movement like rain falling from the sky. It generates new rain by clearing the top row and then randomly placing rain drops with the carachter ('|') with a 20% chance for each column (if dis(gen) < 2). The rain is then printed and a delay is implemented by pausing the loop for 100 milliseconds to control the animation speed. The rain is also coloured dark blue using the SetConsoleTextAttribute. 
 
-<img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/raingeneration.png" width="400" height="300">
+<img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/raingeneration.png" width="500" height="400">
 
 - generateSleet is similar to generateRain. Instead of shifting each row of the vector straight down, it shifts it down and to the right by one position, which simulates diagonal movement like sleet is.	(for (int i = HEIGHT - 1; i > 0; --i) { for (int j = 0; j < WIDTH - 1; j++) { screen[i][j + 1] = screen[i - 1][j]; }). The top row is cleared again and then the sleet is randomly placed with drops '\' or '/' with a 10% chance of rain, making it less heavy than heavier rain, like sleet is in real life. Its also a lighter colour than the heavy rain, appearing a light blue colour.
 
-<img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/sleetgeneration.png" width="400" height="300">
+<img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/sleetgeneration.png" width="500" height="400">
 
 
 ## Problem Solving
