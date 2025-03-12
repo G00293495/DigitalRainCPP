@@ -19,7 +19,7 @@ I will now dive into the code deeper and show you how Digital Rain brings tradit
 
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/rainheader.png" width="400" height="300">
 
-The <random> library is used for random number generation, which will be used to generate rainfall. <mmsytem.h> is used for playing sounds which will be used when the application is started up and a certain option is chosen within the console. <vector> is like a reziable array, and this will be used for my screen in which the DigitalRain will be printed on. 
+- The <random> library is used for random number generation, which will be used to generate rainfall. <mmsytem.h> is used for playing sounds which will be used when the application is started up and a certain option is chosen within the console. <vector> is like a reziable array, and this will be used for my screen in which the DigitalRain will be printed on. 
 
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/includes.png" width="400" height="300">
 
