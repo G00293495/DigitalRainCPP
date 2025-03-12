@@ -34,6 +34,7 @@ DrawClouds uses the GoToXY function. This function is used as a utility function
 
 ## Algorithim
 The hConsole Hanfle gets the handle to the console output. The random generator (random_device and mt19937) is used to generate random numbers between 1 and 9. This is used to create random rain drops. The for loop for shifting the rain down shifts each row of the screen vector down by one position, which simulates downwards movement like rain falling from the sky. It generates new rain by clearing the top row and then randomly placing rain drops with the carachter ('|') with a 20% chance for each column (if dis(gen) < 2). The rain is then printed and a delay is implemented by pausing the loop for 100 milliseconds to control the animation speed. 
+
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/raingeneration.png" width="400" height="300"
 
 
