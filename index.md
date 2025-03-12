@@ -33,9 +33,9 @@ tags: cpp coding project
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/drawclouds.png" width="400" height="300">
 
 ## Algorithim
-- The hConsole Handle gets the handle to the console output. The random generator (random_device and mt19937) is used to generate random numbers between 1 and 9. This is used to create random rain drops. PlaySound is part of the <mmsystem.h> library. This is used to play a thunderSound which resembles the sound ehard when rain is heavy. If the user has speakers, they can hear it when heavy rain is generated! The SND_LOOP ensures the sound loops when its reached its length ensuring a good user experience always when in the console.
+- The hConsole Handle gets the handle to the console output. The random generator (random_device and mt19937) is used to generate random numbers between 1 and 9. This is used to create random rain drops. PlaySound is part of the <mmsystem.h> library. This is used to play a thunderSound which resembles the sound heard when rain is heavy. If the user has speakers, they can hear it when heavy rain is generated! The SND_LOOP ensures the sound loops when its reached its length ensuring a good user experience always when in the console.
 
-- The for loop for shifting the rain down shifts each row of the screen vector down by one position (for (int i = HEIGHT -1; i > 0; --i), which simulates downwards movement like rain falling from the sky. It generates new rain by clearing the top row and then randomly placing rain drops with the carachter ('|') with a 20% chance for each column (if dis(gen) < 2). The rain is then printed and a delay is implemented by pausing the loop for 100 milliseconds to control the animation speed. The rain is also coloured dark blue using the SetConsoleTextAttribute. 
+- The for loop for shifting the rain down shifts each row of the screen vector down by one position (for (int i = HEIGHT -1; i > 0; --i), which simulates downwards movement like rain falling from the sky. It generates new rain by clearing the top row and then randomly placing rain drops with the character ('|') with a 20% chance for each column (if dis(gen) < 2). The rain is then printed and a delay is implemented by pausing the loop for 100 milliseconds to control the animation speed. The rain is also coloured dark blue using the SetConsoleTextAttribute. 
 
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/raingeneration.png" width="500" height="400">
 
@@ -43,6 +43,9 @@ tags: cpp coding project
 
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/sleetgeneration.png" width="500" height="400">
 
+- A copy constructor is present at the bottom of my code, however it is empty. I didnt have a use for this, but its inculded to show my understanding of these types of constructors and how to implement them into C++ code in the future.
+- 
+<img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/copyconstructot.png" width="400" height="300">
 
 ## Problem Solving
 
