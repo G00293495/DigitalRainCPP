@@ -23,6 +23,10 @@ The start menu is the first code that appears on the screen, presentening the us
 
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/startmenu.png" width="400" height="300">
 
+The start function is a simple UserInput function. This gives the code the appropriate letter to enter to start either Heavy or sleet rain. If the input is invlaid, print out that the Input isnt right and exit the programme. 
+
+<img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/start.png" width="400" height="300">
+
 
 
 
