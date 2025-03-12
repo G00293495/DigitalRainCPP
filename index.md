@@ -11,23 +11,23 @@ tags: cpp coding project
 
 ## Design and Test
 
-The Rain class contains all the functionality required to simulate the weather effects. It includes methods for starting the simulation, displaying the start menu, drawing clouds, generating rain and sleet, playing thunder sounds, and clearing the screen.
+- The Rain class contains all the functionality required to simulate the weather effects. It includes methods for starting the simulation, displaying the start menu, drawing clouds, generating rain and sleet, playing thunder sounds, and clearing the screen.
 
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/rainheader.png" width="400" height="300">
 
-The constructor is initialized as a vector of strings. This Vector has a size of 20 and a width of 85, and it is filled with spaces (' '). This particular setup creates a blank screen of 20 rows and 85 columns, where each cell is originally empty. This is the foundation of displaying the rain and sleet. 
+- The constructor is initialized as a vector of strings. This Vector has a size of 20 and a width of 85, and it is filled with spaces (' '). This particular setup creates a blank screen of 20 rows and 85 columns, where each cell is originally empty. This is the foundation of displaying the rain and sleet. 
 
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/constructor.png" width="300" height="100">
 
-The start menu is the first code that appears on the screen, presentening the user with an amusing start menu. This start menu has ASCII art to be visually appealing to the user, and it also provides text which prompts the user to enter 'H' for heavy rain and 'S' for sleet. 
+- The start menu is the first code that appears on the screen, presentening the user with an amusing start menu. This start menu has ASCII art to be visually appealing to the user, and it also provides text which prompts the user to enter 'H' for heavy rain and 'S' for sleet. 
 
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/startmenu.png" width="400" height="300">
 
-The start function is a simple UserInput function. This gives the code the appropriate letter to enter to start either Heavy or sleet rain. If the input is invlaid, print out that the Input isnt right and exit the programme. 
+- The start function is a simple UserInput function. This gives the code the appropriate letter to enter to start either Heavy or sleet rain. If the input is invlaid, print out that the Input isnt right and exit the programme. 
 
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/start.png" width="400" height="300">
 
-DrawClouds uses the GoToXY function. This function is used as a utility function to set the cursor position in the console window. This allows me to have control over where the text is printed on the screen, allowing me to draw cool clouds and start the rain in certain positions. DrawClouds contains 2 clouds, cloud 1 and cloud 2. Cloud 1 is positioned at one fourth of the screen width and cloud 2 is positioned at 2 fourhts of the screen width. The GoToXY function is used multiple times to draw the cloud art that I found on the ASCII art website. 
+- DrawClouds uses the GoToXY function. This function is used as a utility function to set the cursor position in the console window. This allows me to have control over where the text is printed on the screen, allowing me to draw cool clouds and start the rain in certain positions. DrawClouds contains 2 clouds, cloud 1 and cloud 2. Cloud 1 is positioned at one fourth of the screen width and cloud 2 is positioned at 2 fourhts of the screen width. The GoToXY function is used multiple times to draw the cloud art that I found on the ASCII art website. 
 
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/gotoXY.png" width="600" height="200">
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/drawclouds.png" width="400" height="300">
