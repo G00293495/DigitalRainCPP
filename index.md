@@ -11,6 +11,10 @@ tags: cpp coding project
 
 ## Design and Test
 
+The Rain class contains all the functionality required to simulate the weather effects. It includes methods for starting the simulation, displaying the start menu, drawing clouds, generating rain and sleet, playing thunder sounds, and clearing the screen.
+
+
+
 
 ## Algorithim
 
