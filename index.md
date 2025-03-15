@@ -98,6 +98,21 @@ If the test fails, the program throws an assertion error, helping us identify is
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/startMenuTest.png" width="500" height="400">
 
 ## Modern C++ Insight and Reflection
+I thoroughly enjoyed working on this Modern c++ project. It proved to be a technical but rewarding experience. 
+
+When I first started, after viewing example projects, I knew i wanted to make something lightweight yet effective, and something slightly different from the matrix rain with letter thats I saw lots of. I knew i wanted to use real time console animation and it was a valuable experience, giving me a great insight to how modern C++ can provide such fine details on the terminals. 
+
+I found myself diving head first into many different concepts like multithreading which was to ensure smooth execution of my programme, while chrono based timing was essential in the control of my heavy rain and sleet. 
+
+I researched and familiarized myself with the windows API function, and I saw the benefits that could be used by manipulating the console output in a dynamic way. The SetConsoleCursorPosition() was essential, allowing me to repoistion the cursor without clearing the screen, making sure there was no flickering effect on my screen. I also used the SetConsoleTextAttribute() function to have my heavy rain in a darker blue and my sleet in a lighter colour blue, which was more visually appealing for the user. 
+
+I used random number generation in a slightly different way, using it to make the rain movement feel more ogranic and relaistic, rather than really repetitive. I used an algorithim in a way that only printed rain when a certain condition like (a number being less than another number), which I think worked really well. 
+
+A system I found and had great enjoyment using was the mmsytem.h library, this really made my project come to life. This allowed me to add a thundery sound to my heavy rain, which had a real immersive touch on my project. It amde the simulation feel alive, and definetely made it feel like proper Irish rain, which we are well used to!
+
+I also gained not only an insight, but greater appreciation for Object Oriented Programming (OOP), especially with my Rain class that I designed, as it was the backbone of my project. It contains all necessary functionality, from generating and animating raindrops to playing thunder sounds. The screen vector acted as a buffer to store and manipulate the rain’s state before rendering it to the console, reducing unnecessary screen clearing operations. I also implemented a copy constructor, which was not really used in my project, but i still added it slightly to show my understanding of how it may work in future projects.
+
+Overall, the project was a really enjoyable experience, and I would be lying if I said my C++ coding skills now are extemely more advanced than when I first started. Bringing a digital rain project to life was so satisfying, and problem solving along the way gave me a sense of drive and purpose to get the project finished. I discovered new depths in the tools that can be used in C++.
 
 
 ## References
