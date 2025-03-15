@@ -71,9 +71,9 @@ int main() {
 
 # Design 
 
-- The <random> library is used for random number generation, which will be used to generate rainfall.
-- <mmsytem.h> used for playing sounds which will be used when the application is started up and a certain option is chosen within the console [1]
-- <vector> is like a reziable array, and this will be used for my screen in which the DigitalRain will be printed on.
+- The random library is used for random number generation, which will be used to generate rainfall.
+- mmsytem.h used for playing sounds which will be used when the application is started up and a certain option is chosen within the console [1]
+- vector is like a reziable array, and this will be used for my screen in which the DigitalRain will be printed on.
 - "Rain.h" is my custom header file, containing class and function definitions related to the rain simulation.
 - <iostream> provides input and output stream functionality (e.g., std::cout, std::cin).
 - <cstdlib> – includes all the standard library functions like memory allocation, process control, and random number generation.
