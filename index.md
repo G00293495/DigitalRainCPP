@@ -24,6 +24,18 @@ I will now dive into the code deeper and show you how Digital Rain brings tradit
 ## main.cpp 
 – The entry point of the program, initializing a Rain object and starting the simulation.
 
+```
+#include "Rain.h"
+#include <iostream>
+
+int main() {
+    Rain rainSimulation;
+    rainSimulation.start();
+
+    return 0;
+}
+```
+
 ## test.cpp 
 – A test file using assertions to validate the output of the displayStartMenu() function.
 
@@ -31,7 +43,8 @@ I will now dive into the code deeper and show you how Digital Rain brings tradit
 
 - The Rain class contains all the functionality required to simulate the weather effects. It includes methods for starting the simulation, displaying the start menu, drawing clouds, generating rain and sleet, playing thunder sounds, and clearing the screen.
 
-```##ifndef RAIN_H
+```
+##ifndef RAIN_H
 #define RAIN_H
 
 #include <string>
@@ -136,7 +149,14 @@ void Rain::start() {
 
 - DrawClouds uses the GoToXY function. This function is used as a utility function to set the cursor position in the console window. This allows me to have control over where the text is printed on the screen, allowing me to draw cool clouds and start the rain in certain positions. DrawClouds contains 2 clouds, cloud 1 and cloud 2. Cloud 1 is positioned at one fourth of the screen width and cloud 2 is positioned at 2 fourhts of the screen width. The GoToXY function is used multiple times to draw the cloud art that I found on the ASCII art website. 
 
-``` ```
+```
+void GotoXY(int x, int y) {
+    COORD coord;
+    coord.X = x;
+    coord.Y = y;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+}
+```
 
 ```
 void Rain::drawClouds() {
@@ -164,19 +184,99 @@ void Rain::drawClouds() {
  ```
 
 # Algorithim
-- The hConsole Handle gets the handle to the console output. The random generator (random_device and mt19937) is used to generate random numbers between 1 and 9. This is used to create random rain drops. PlaySound is part of the <mmsystem.h> library. This is used to play a thunderSound which resembles the sound heard when rain is heavy. If the user has speakers, they can hear it when heavy rain is generated! The SND_LOOP ensures the sound loops when its reached its length ensuring a good user experience always when in the console.
+- For generate rain, The hConsole Handle gets the handle to the console output. The random generator (random_device and mt19937) is used to generate random numbers between 1 and 9. This is used to create random rain drops. PlaySound is part of the <mmsystem.h> library. This is used to play a thunderSound which resembles the sound heard when rain is heavy. If the user has speakers, they can hear it when heavy rain is generated! The SND_LOOP ensures the sound loops when its reached its length ensuring a good user experience always when in the console.
 
 - The for loop for shifting the rain down shifts each row of the screen vector down by one position (for (int i = HEIGHT -1; i > 0; --i), which simulates downwards movement like rain falling from the sky. It generates new rain by clearing the top row and then randomly placing rain drops with the character with a 20% chance for each column (if dis(gen) < 2). The rain is then printed and a delay is implemented by pausing the loop for 100 milliseconds to control the animation speed. The rain is also coloured dark blue using the SetConsoleTextAttribute. 
 
-<img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/raingeneration.png" width="500" height="400">
+```
+void Rain::generateRain() {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dis(0, 9);
+
+    system("cls");
+
+    PlaySound(TEXT("thunder.wav"), NULL, SND_ASYNC | SND_LOOP);
+
+    while (true) {
+        drawClouds();
+        // Shift rain down
+        for (int i = HEIGHT - 1; i > 0; --i) {
+            screen[i] = screen[i - 1];
+        }
+
+        // New rain
+        screen[0] = std::string(WIDTH, ' ');
+        for (int i = 0; i < WIDTH; i++) {
+            if (dis(gen) < 2) {
+                screen[0][i] = '|';
+            }
+        }
+
+        // Print the rain in blue
+        for (int i = 0; i < HEIGHT; i++) {
+            GotoXY(0, i + 9); // below clouds
+            SetConsoleTextAttribute(hConsole, 9); // blue
+            std::cout << screen[i];
+        }
+
+        SetConsoleTextAttribute(hConsole, 7);
+
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    }
+}
+```
 
 - generateSleet is similar to generateRain. Instead of shifting each row of the vector straight down, it shifts it down and to the right by one position, which simulates diagonal movement like sleet is.	(for (int i = HEIGHT - 1; i > 0; --i) { for (int j = 0; j < WIDTH - 1; j++) { screen[i][j + 1] = screen[i - 1][j]; }). The top row is cleared again and then the sleet is randomly placed with drops '\' or '/' with a 10% chance of rain, making it less heavy than heavier rain, like sleet is in real life. Its also a lighter colour than the heavy rain, appearing a light blue colour.
 
-<img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/sleetgeneration.png" width="500" height="400">
+```
+void Rain::generateSleet() {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dis(0, 9);
+    std::uniform_int_distribution<> dir_dis(0, 1);
+
+    system("cls");
+
+    while (true) {
+        drawClouds();
+
+        // Shift rain down diagonally
+        for (int i = HEIGHT - 1; i > 0; --i) {
+            for (int j = 0; j < WIDTH - 1; j++) {
+                screen[i][j + 1] = screen[i - 1][j]; // Diagonal shift
+            }
+        }
+
+        // Generate new sleet
+        screen[0] = std::string(WIDTH, ' ');
+        for (int i = 0; i < WIDTH; i++) {
+            if (dis(gen) < 1) {
+                screen[0][i] = (dir_dis(gen) == 0) ? '\\' : '/'; // Randomly pick diagonal direction
+            }
+        }
+
+        // Print the sleet in light blue
+        for (int i = 0; i < HEIGHT; i++) {
+            GotoXY(0, i + 9);
+            SetConsoleTextAttribute(hConsole, 11); // Light Blue
+            std::cout << screen[i];
+        }
+
+        SetConsoleTextAttribute(hConsole, 7);
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    }
+}
+ ```
 
 - A copy constructor is present at the bottom of my code, however it is empty. I didnt have a use for this, but its inculded to show my understanding of these types of constructors and how to implement them into C++ code in the future. Copy contructors are extremely useful in C++ code, allowing a user to create a new object from an existing one by initialization. 
 
-<img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/copyconstructot.png" width="500" height="100">
+```
+Rain::Rain(const Rain& other) : screen(other.screen) {
+} 
+```
 
 # Problem Solving
 - One problem that I encountered during my project was the clouds flickering on and off very quickly while the rain was being printed. This meant that a choppy effect was present, and it did not look user friendly or clean. To fix this, I made use of the system("cls") function. This function was used after the user picked what type of rain they wanted. The system("cls") function simply clears the whole screen. The <cstdlib> function is needed in order for it to work. When the screen cleared, the draw clouds function was then used to draw the clouds and keep them present on the screen while the rain was printing. This ensured a smooth trainsition from one screen to the next on the console, allowing a visually pleasent representation of digital rain.
@@ -209,7 +309,30 @@ If these phrases exist, the test passes; otherwise, it fails.
 After the test, we restore std::cout to ensure normal console behavior.
 If the test fails, the program throws an assertion error, helping us identify issues.
 
-<img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/startMenuTest.png" width="500" height="400">
+```
+ #include "Rain.h"
+#include <iostream>
+#include <sstream>
+#include <cassert>
+
+
+void testDisplayStartMenu() {
+    std::ostringstream outputBuffer;  
+    std::streambuf* oldCout = std::cout.rdbuf(outputBuffer.rdbuf());  
+
+    Rain rainTest;
+    rainTest.displayStartMenu();  
+
+    std::cout.rdbuf(oldCout); 
+
+    std::string output = outputBuffer.str();
+    assert(output.find("Welcome to Digital Rain!") != std::string::npos);
+    assert(output.find("Press 'S' for Sleet") != std::string::npos);
+    assert(output.find("Press 'H' for Heavy Rain") != std::string::npos);
+
+    std::cout << "Test Passed: displayStartMenu() output is correct!" << std::endl;
+}
+ ```
 
 # Modern C++ Insight and Reflection
 I thoroughly enjoyed working on this Modern c++ project. It proved to be a technical but rewarding experience. 
