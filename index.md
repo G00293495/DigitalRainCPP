@@ -5,7 +5,7 @@ tags: cpp coding project
   categories: Project
 ---
 
-## Introduction
+# Introduction
 
 Welcome to my project blog. I will be showing you my application called "Digital Rain." Inspired by the iconic rain effect from the Matrix movies, this program simulates different types of weather, including heavy rain and sleet, right in your terminal. 
 
@@ -13,21 +13,21 @@ Using modern C++ features and libraries, such as <random> for advanced random nu
 
 I will now dive into the code deeper and show you how Digital Rain brings traditional Irish weather to life on your screen!
 
-## Layout
+# Layout
 
-# Rain.h 
+## Rain.h 
 – The header file defining the Rain class, including its methods and member variables.
 
-# Rain.cpp 
+## Rain.cpp 
 – The implementation file for the Rain class, containing the logic for rendering rain, sleet, thunder sounds, and user interaction.
 
-# main.cpp 
+## main.cpp 
 – The entry point of the program, initializing a Rain object and starting the simulation.
 
-# test.cpp 
+## test.cpp 
 – A test file using assertions to validate the output of the displayStartMenu() function.
 
-## Design 
+# Design 
 
 - The Rain class contains all the functionality required to simulate the weather effects. It includes methods for starting the simulation, displaying the start menu, drawing clouds, generating rain and sleet, playing thunder sounds, and clearing the screen. 
 
@@ -63,7 +63,7 @@ I will now dive into the code deeper and show you how Digital Rain brings tradit
 
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/drawclouds.png" width="400" height="300">
 
-## Algorithim
+# Algorithim
 - The hConsole Handle gets the handle to the console output. The random generator (random_device and mt19937) is used to generate random numbers between 1 and 9. This is used to create random rain drops. PlaySound is part of the <mmsystem.h> library. This is used to play a thunderSound which resembles the sound heard when rain is heavy. If the user has speakers, they can hear it when heavy rain is generated! The SND_LOOP ensures the sound loops when its reached its length ensuring a good user experience always when in the console.
 
 - The for loop for shifting the rain down shifts each row of the screen vector down by one position (for (int i = HEIGHT -1; i > 0; --i), which simulates downwards movement like rain falling from the sky. It generates new rain by clearing the top row and then randomly placing rain drops with the character with a 20% chance for each column (if dis(gen) < 2). The rain is then printed and a delay is implemented by pausing the loop for 100 milliseconds to control the animation speed. The rain is also coloured dark blue using the SetConsoleTextAttribute. 
@@ -78,14 +78,14 @@ I will now dive into the code deeper and show you how Digital Rain brings tradit
 
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/copyconstructot.png" width="500" height="100">
 
-## Problem Solving
+# Problem Solving
 - One problem that I encountered during my project was the clouds flickering on and off very quickly while the rain was being printed. This meant that a choppy effect was present, and it did not look user friendly or clean. To fix this, I made use of the system("cls") function. This function was used after the user picked what type of rain they wanted. The system("cls") function simply clears the whole screen. The <cstdlib> function is needed in order for it to work. When the screen cleared, the draw clouds function was then used to draw the clouds and keep them present on the screen while the rain was printing. This ensured a smooth trainsition from one screen to the next on the console, allowing a visually pleasent representation of digital rain. 
 
 - I also encountered a problem where, for a while, my clouds were not printing at all, only the rain. This was because i did not have the drawclouds() function in my while true loop. This while true loop was used for rain generation. When it was outside the loop, the clouds would draw but be instantly cleared by the system("cls") function. This meant a blank space was created above the rain and it looked like it was coming from nowhere. When the draw clouds was in the while true loop, it printed with the rain, so it wasnt cleared and printed cleanly on the screen. 
 
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/problem1.png" width="500" height="400">
 
-## Test
+# Test
 - For this project, I implemented a unit test to verify the functionality of the displayStartMenu() method in my Digital Rain Simulation. This method is responsible for displaying the start menu, where users can choose between different weather types.
 
 - Purpose of the Test
@@ -111,7 +111,7 @@ If the test fails, the program throws an assertion error, helping us identify is
 
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/startMenuTest.png" width="500" height="400">
 
-## Modern C++ Insight and Reflection
+# Modern C++ Insight and Reflection
 I thoroughly enjoyed working on this Modern c++ project. It proved to be a technical but rewarding experience. 
 
 When I first started, after viewing example projects, I knew i wanted to make something lightweight yet effective, and something slightly different from the matrix rain with letter thats I saw lots of. I knew i wanted to use real time console animation and it was a valuable experience, giving me a great insight to how modern C++ can provide such fine details on the terminals. 
@@ -128,15 +128,15 @@ I also gained not only an insight, but greater appreciation for Object Oriented 
 
 Overall, the project was a really enjoyable experience, and I would be lying if I said my C++ coding skills now are extemely more advanced than when I first started. Bringing a digital rain project to life was so satisfying, and problem solving along the way gave me a sense of drive and purpose to get the project finished. I discovered new depths in the tools that can be used in C++.
 
-## Heavy Rain
+# Heavy Rain
 
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/heavyrain.png" width="500" height="400">
 
-## Sleet
+# Sleet
 
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/sleet.png" width="500" height="400">
 
-## References
+# References
 [1] Using winmm library in C. Stack Overflow. [Online] Available: https://stackoverflow.com/questions/14014141/using-winmm-library-in-c
 
 [2] ChatGPT. (GPT-4). Open AI. [Online]. Available: https://chatgpt.com/
