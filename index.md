@@ -13,6 +13,20 @@ Using modern C++ features and libraries, such as <random> for advanced random nu
 
 I will now dive into the code deeper and show you how Digital Rain brings traditional Irish weather to life on your screen!
 
+## Layout
+
+# Rain.h 
+– The header file defining the Rain class, including its methods and member variables.
+
+# Rain.cpp 
+– The implementation file for the Rain class, containing the logic for rendering rain, sleet, thunder sounds, and user interaction.
+
+# main.cpp 
+– The entry point of the program, initializing a Rain object and starting the simulation.
+
+# test.cpp 
+– A test file using assertions to validate the output of the displayStartMenu() function.
+
 ## Design 
 
 - The Rain class contains all the functionality required to simulate the weather effects. It includes methods for starting the simulation, displaying the start menu, drawing clouds, generating rain and sleet, playing thunder sounds, and clearing the screen. 
