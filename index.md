@@ -114,6 +114,13 @@ I also gained not only an insight, but greater appreciation for Object Oriented 
 
 Overall, the project was a really enjoyable experience, and I would be lying if I said my C++ coding skills now are extemely more advanced than when I first started. Bringing a digital rain project to life was so satisfying, and problem solving along the way gave me a sense of drive and purpose to get the project finished. I discovered new depths in the tools that can be used in C++.
 
+## Heavy Rain
+
+<img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/heavyrain.png" width="500" height="400">
+
+## Sleet
+
+<img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/sleet.png" width="500" height="400">
 
 ## References
 [1] Using winmm library in C. Stack Overflow. [Online] Available: https://stackoverflow.com/questions/14014141/using-winmm-library-in-c
