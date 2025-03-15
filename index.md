@@ -31,33 +31,6 @@ I will now dive into the code deeper and show you how Digital Rain brings tradit
 
 - The Rain class contains all the functionality required to simulate the weather effects. It includes methods for starting the simulation, displaying the start menu, drawing clouds, generating rain and sleet, playing thunder sounds, and clearing the screen.
 
-`#ifndef RAIN_H
-#define RAIN_H
-
-#include <string>
-#include <vector>
-
-const int WIDTH = 85;
-const int HEIGHT = 20;
-
-class Rain {
-public:
-    Rain();
-    Rain(const Rain& other);
-    void start();
-    void displayStartMenu();
-    void drawClouds();
-    void generateRain();
-    void generateSleet();
-    void playThunder();
-    void clearScreen();
-    // void testDisplayStartMenu();
-
-private:
-    std::vector<std::string> screen; 
-};
-#endif`
-
 - The <random> library is used for random number generation, which will be used to generate rainfall.
 - <mmsytem.h> used for playing sounds which will be used when the application is started up and a certain option is chosen within the console [1]
 - <vector> is like a reziable array, and this will be used for my screen in which the DigitalRain will be printed on.
@@ -68,7 +41,8 @@ private:
 - <chrono> – Provides time-related utilities for measuring execution time, delays, and time points.
 - <windows.h> – A Windows-specific header providing access to the Windows API for system functions.
 
-`#include "Rain.h"
+`
+#include "Rain.h"
 #include <iostream>
 #include <cstdlib>
 #include <vector>
@@ -76,7 +50,8 @@ private:
 #include <chrono>
 #include <windows.h>
 #include <mmsystem.h>
-#include <random>` 
+#include <random>
+` 
 
 - The constructor is initialized as a vector of strings. This Vector has a size of 20 and a width of 85, and it is filled with spaces (' '). This particular setup creates a blank screen of 20 rows and 85 columns, where each cell is originally empty. This is the foundation of displaying the rain and sleet. 
 
