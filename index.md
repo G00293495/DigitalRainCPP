@@ -39,7 +39,7 @@ I will now dive into the code deeper and show you how Digital Rain brings tradit
 
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/startmenu.png" width="400" height="300">
 
-- The start function is a simple UserInput function. This gives the code the appropriate letter to enter to start either Heavy or sleet rain. If the input is invlaid, print out that the Input isnt right and exit the programme. 
+- The start function serves as the entry point for user interaction in the Digital Rain simulation. It begins by displaying the start menu, which provides users with a choice of weather effects. The function then waits for user input, capturing a single character. Depending on whether the user enters 'S' (or 's') for sleet or 'H' (or 'h') for heavy rain, the function will call the respective generation function (generateSleet() or generateRain()). If the input does not match either of these valid options, an error message is displayed, informing the user of the invalid input, and the program exits. This approach ensures that only valid commands trigger the rain effects while maintaining a simple interface.
 
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/start.png" width="400" height="300">
 
