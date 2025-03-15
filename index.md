@@ -19,7 +19,15 @@ I will now dive into the code deeper and show you how Digital Rain brings tradit
 
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/rainheader.png" width="400" height="300">
 
-- The <random> library is used for random number generation, which will be used to generate rainfall. <mmsytem.h> is used for playing sounds which will be used when the application is started up and a certain option is chosen within the console. <vector> is like a reziable array, and this will be used for my screen in which the DigitalRain will be printed on. 
+- The <random> library is used for random number generation, which will be used to generate rainfall.
+- <mmsytem.h> is used for playing sounds which will be used when the application is started up and a certain option is chosen within the console.
+- <vector> is like a reziable array, and this will be used for my screen in which the DigitalRain will be printed on.
+- "Rain.h" is my custom header file, containing class and function definitions related to the rain simulation.
+- <iostream> provides input and output stream functionality (e.g., std::cout, std::cin).
+- <cstdlib> – includes all the standard library functions like memory allocation, process control, and random number generation.
+- <thread> – Supports multithreading operations, allowing concurrent execution of functions in my programme.
+- <chrono> – Provides time-related utilities for measuring execution time, delays, and time points.
+- <windows.h> – A Windows-specific header providing access to the Windows API for system functions.
 
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/includes.png" width="400" height="300">
 
@@ -89,21 +97,12 @@ If the test fails, the program throws an assertion error, helping us identify is
 
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/startMenuTest.png" width="500" height="400">
 
-
-
-
 ## Modern C++ Insight and Reflection
 
 
-Font can be *Italic* or **Bold**.
+## References
+[1] Using winmm library in C. Stack Overflow. [Online] Available: https://stackoverflow.com/questions/14014141/using-winmm-library-in-c
 
-Code can be highlighted with 'backticks'.
+[2] ChatGPT. (GPT-4). Open AI. [Online]. Available: https://chatgpt.com/
 
-Hyperlinks look like this: [GitHub Help](https://help.github.com/).
-
-A bullet list:
-
-- vectors
-- algorithms
-- iterators
-
+[3] Windows. Create and remove project dependencies. [Online]. Available: https://learn.microsoft.com/en-us/visualstudio/ide/how-to-create-and-remove-project-dependencies?view=vs-2022
