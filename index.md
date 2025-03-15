@@ -281,8 +281,13 @@ Rain::Rain(const Rain& other) : screen(other.screen) {
 
 - I also encountered a problem where, for a while, my clouds were not printing at all, only the rain. This was because i did not have the drawclouds() function in my while true loop. This while true loop was used for rain generation. When it was outside the loop, the clouds would draw but be instantly cleared by the system("cls") function. This meant a blank space was created above the rain and it looked like it was coming from nowhere. When the draw clouds was in the while true loop, it printed with the rain, so it wasnt cleared and printed cleanly on the screen. 
 
-<img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/problem1.png" width="500" height="400">
+```
+ system("cls");
 
+while (true) {
+    drawClouds();
+```
+ 
 # Test
 - For this project, I implemented a unit test to verify the functionality of the displayStartMenu() method in my Digital Rain Simulation. This method is responsible for displaying the start menu, where users can choose between different weather types.
 
