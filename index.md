@@ -84,21 +84,84 @@ private:
 
 - The constructor is initialized as a vector of strings. This Vector has a size of 20 and a width of 85, and it is filled with spaces (' '). This particular setup creates a blank screen of 20 rows and 85 columns, where each cell is originally empty. This is the foundation of displaying the rain and sleet. 
 
-<img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/constructor.png" width="500" height="100">
+``` Rain::Rain() : screen(HEIGHT, std::string(WIDTH, ' ')) {} ```
 
 - The start menu is the first code that appears on the screen, presentening the user with an amusing start menu. This start menu has ASCII art to be visually appealing to the user, and it also provides text which prompts the user to enter 'H' for heavy rain and 'S' for sleet. 
 
-<img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/startmenu.png" width="400" height="300">
+```
+void Rain::displayStartMenu() {
+    std::cout << R"(
+         __I__
+   .-'"  .  "'-.
+ .'  / . ' . \  '.
+/_.-..-..-..-..-._\ .---------------------------------.
+         #  _,,_   ( Choose your weather type! )
+         #/    \ /'---------------------------------'
+         / / 6 6\ \
+         \/\  Y /\/       /\-/\
+         #/ 'U \       /a a  \               _
+       , (  \   | \     =\ Y  =/-~~~~~~-,_____/ )
+       |\|\_/#  \_/       '^--'          ______/
+       \/'.  \  /'\         \           /
+        \    /=\  /         ||  |---'\  \
+        /____)/____)       (_(__|   ((__|
 
+   Welcome to Digital Rain!
+   Press 'S' for Sleet (light diagonal rain)
+   Press 'H' for Heavy Rain (default)
+    )";
+}
+```
 - The start function serves as the entry point for user interaction in the Digital Rain simulation. It begins by displaying the start menu, which provides users with a choice of weather effects. The function then waits for user input, capturing a single character. Depending on whether the user enters 'S' (or 's') for sleet or 'H' (or 'h') for heavy rain, the function will call the respective generation function (generateSleet() or generateRain()). If the input does not match either of these valid options, an error message is displayed, informing the user of the invalid input, and the program exits. This approach ensures that only valid commands trigger the rain effects while maintaining a simple interface.
 
-<img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/start.png" width="400" height="300">
+```
+void Rain::start() {
+    displayStartMenu();
+
+    char userInput;
+    std::cin >> userInput;
+
+    if (userInput == 'S' || userInput == 's') {
+        generateSleet();
+    }
+    else if (userInput == 'H' || userInput == 'h') {
+
+        generateRain();
+    }
+    else {
+        std::cout << "Invalid input. Exiting...\n";
+    }
+}
+```
 
 - DrawClouds uses the GoToXY function. This function is used as a utility function to set the cursor position in the console window. This allows me to have control over where the text is printed on the screen, allowing me to draw cool clouds and start the rain in certain positions. DrawClouds contains 2 clouds, cloud 1 and cloud 2. Cloud 1 is positioned at one fourth of the screen width and cloud 2 is positioned at 2 fourhts of the screen width. The GoToXY function is used multiple times to draw the cloud art that I found on the ASCII art website. 
 
-<img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/gotoXY.png" width="600" height="200">
+``` ```
 
-<img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/drawclouds.png" width="400" height="300">
+```
+void Rain::drawClouds() {
+    int cloud1X = (WIDTH / 4) - 10;
+    int cloud2X = (3 * WIDTH / 4) - 10;
+
+    int cloudY = 3;
+
+    // First cloud
+    GotoXY(cloud1X, cloudY);   std::cout << "       .-~~~-.";
+    GotoXY(cloud1X, cloudY + 1); std::cout << "  .- ~ ~-(       )_ _";
+    GotoXY(cloud1X, cloudY + 2); std::cout << " /                     ~ -.";
+    GotoXY(cloud1X, cloudY + 3); std::cout << "|                           \\";
+    GotoXY(cloud1X, cloudY + 4); std::cout << " \\                         .'";
+    GotoXY(cloud1X, cloudY + 5); std::cout << "   ~- . _____________ . -~";
+
+    // Second cloud
+    GotoXY(cloud2X, cloudY);   std::cout << "       .-~~~-.";
+    GotoXY(cloud2X, cloudY + 1); std::cout << "  .- ~ ~-(       )_ _";
+    GotoXY(cloud2X, cloudY + 2); std::cout << " /                     ~ -.";
+    GotoXY(cloud2X, cloudY + 3); std::cout << "|                           \\";
+    GotoXY(cloud2X, cloudY + 4); std::cout << " \\                         .'";
+    GotoXY(cloud2X, cloudY + 5); std::cout << "   ~- . _____________ . -~";
+}
+ ```
 
 # Algorithim
 - The hConsole Handle gets the handle to the console output. The random generator (random_device and mt19937) is used to generate random numbers between 1 and 9. This is used to create random rain drops. PlaySound is part of the <mmsystem.h> library. This is used to play a thunderSound which resembles the sound heard when rain is heavy. If the user has speakers, they can hear it when heavy rain is generated! The SND_LOOP ensures the sound loops when its reached its length ensuring a good user experience always when in the console.
