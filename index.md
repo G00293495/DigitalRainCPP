@@ -18,33 +18,8 @@ I will now dive into the code deeper and show you how Digital Rain brings tradit
 ## Rain.h 
 – The header file defining the Rain class, including its methods and member variables.
 
-## Rain.cpp 
-– The implementation file for the Rain class, containing the logic for rendering rain, sleet, thunder sounds, and user interaction.
-
-## main.cpp 
-– The entry point of the program, initializing a Rain object and starting the simulation.
-
 ```
-#include "Rain.h"
-#include <iostream>
-
-int main() {
-    Rain rainSimulation;
-    rainSimulation.start();
-
-    return 0;
-}
-```
-
-## test.cpp 
-– A test file using assertions to validate the output of the displayStartMenu() function.
-
-# Design 
-
-- The Rain class contains all the functionality required to simulate the weather effects. It includes methods for starting the simulation, displaying the start menu, drawing clouds, generating rain and sleet, playing thunder sounds, and clearing the screen.
-
-```
-##ifndef RAIN_H
+#ifndef RAIN_H
 #define RAIN_H
 
 #include <string>
@@ -71,7 +46,30 @@ private:
 };
 
 #endif
+ ```
+
+## Rain.cpp 
+– The implementation file for the Rain class, containing the logic for rendering rain, sleet, thunder sounds, and user interaction - This whole file is discussed further in the design section.
+
+## main.cpp 
+– The entry point of the program, initializing a Rain object and starting the simulation.
+
 ```
+#include "Rain.h"
+#include <iostream>
+
+int main() {
+    Rain rainSimulation;
+    rainSimulation.start();
+
+    return 0;
+}
+```
+
+## test.cpp 
+– A test file using assertions to validate the output of the displayStartMenu() function - This is shown in the test section.
+
+# Design 
 
 - The <random> library is used for random number generation, which will be used to generate rainfall.
 - <mmsytem.h> used for playing sounds which will be used when the application is started up and a certain option is chosen within the console [1]
