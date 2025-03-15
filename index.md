@@ -79,7 +79,46 @@ I will now dive into the code deeper and show you how Digital Rain brings tradit
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/copyconstructot.png" width="500" height="100">
 
 # Problem Solving
-- One problem that I encountered during my project was the clouds flickering on and off very quickly while the rain was being printed. This meant that a choppy effect was present, and it did not look user friendly or clean. To fix this, I made use of the system("cls") function. This function was used after the user picked what type of rain they wanted. The system("cls") function simply clears the whole screen. The <cstdlib> function is needed in order for it to work. When the screen cleared, the draw clouds function was then used to draw the clouds and keep them present on the screen while the rain was printing. This ensured a smooth trainsition from one screen to the next on the console, allowing a visually pleasent representation of digital rain. 
+- One problem that I encountered during my project was the clouds flickering on and off very quickly while the rain was being printed. This meant that a choppy effect was present, and it did not look user friendly or clean. To fix this, I made use of the system("cls") function. This function was used after the user picked what type of rain they wanted. The system("cls") function simply clears the whole screen. The <cstdlib> function is needed in order for it to work. When the screen cleared, the draw clouds function was then used to draw the clouds and keep them present on the screen while the rain was printing. This ensured a smooth trainsition from one screen to the next on the console, allowing a visually pleasent representation of digital rain.
+
+-  "void Rain::generateSleet() {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dis(0, 9);
+    std::uniform_int_distribution<> dir_dis(0, 1);
+
+    system("cls");
+
+    while (true) {
+        drawClouds();
+
+        // Shift rain down diagonally
+        for (int i = HEIGHT - 1; i > 0; --i) {
+            for (int j = 0; j < WIDTH - 1; j++) {
+                screen[i][j + 1] = screen[i - 1][j]; // Diagonal shift
+            }
+        }
+
+        // Generate new sleet
+        screen[0] = std::string(WIDTH, ' ');
+        for (int i = 0; i < WIDTH; i++) {
+            if (dis(gen) < 1) {
+                screen[0][i] = (dir_dis(gen) == 0) ? '\\' : '/'; // Randomly pick diagonal direction
+            }
+        }
+
+        // Print the sleet in light blue
+        for (int i = 0; i < HEIGHT; i++) {
+            GotoXY(0, i + 9);
+            SetConsoleTextAttribute(hConsole, 11); // Light Blue
+            std::cout << screen[i];
+        }
+
+        SetConsoleTextAttribute(hConsole, 7);
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    }
+} "
 
 - I also encountered a problem where, for a while, my clouds were not printing at all, only the rain. This was because i did not have the drawclouds() function in my while true loop. This while true loop was used for rain generation. When it was outside the loop, the clouds would draw but be instantly cleared by the system("cls") function. This meant a blank space was created above the rain and it looked like it was coming from nowhere. When the draw clouds was in the while true loop, it printed with the rain, so it wasnt cleared and printed cleanly on the screen. 
 
