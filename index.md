@@ -271,6 +271,8 @@ void Rain::generateSleet() {
 }
  ```
 
+- Overall, this implementation efficiently utilizes console functions to create a dynamic weather simulation with both auditory and visual elements.
+
 - A copy constructor is present at the bottom of my code, however it is empty. I didnt have a use for this, but its inculded to show my understanding of these types of constructors and how to implement them into C++ code in the future. Copy contructors are extremely useful in C++ code, allowing a user to create a new object from an existing one by initialization. 
 
 ```
