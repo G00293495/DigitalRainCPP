@@ -184,7 +184,7 @@ void Rain::drawClouds() {
  ```
 
 # Algorithim
-- For generate rain, The hConsole Handle gets the handle to the console output. The random generator (random_device and mt19937) is used to generate random numbers between 1 and 9. This is used to create random rain drops. PlaySound is part of the <mmsystem.h> library. This is used to play a thunderSound which resembles the sound heard when rain is heavy. If the user has speakers, they can hear it when heavy rain is generated! The SND_LOOP ensures the sound loops when its reached its length ensuring a good user experience always when in the console.
+- For generate rain, The hConsole Handle gets the handle to the console output. The random generator (random_device and mt19937) is used to generate random numbers between 1 and 9. This is used to create random rain drops. PlaySound is part of the <mmsystem.h> library. This is used to play a thunderSound which resembles the sound heard when rain is heavy [4]. If the user has speakers, they can hear it when heavy rain is generated! The SND_LOOP ensures the sound loops when its reached its length ensuring a good user experience always when in the console.
 
 - The for loop for shifting the rain down shifts each row of the screen vector down by one position (for (int i = HEIGHT -1; i > 0; --i), which simulates downwards movement like rain falling from the sky. It generates new rain by clearing the top row and then randomly placing rain drops with the character with a 20% chance for each column (if dis(gen) < 2). The rain is then printed and a delay is implemented by pausing the loop for 100 milliseconds to control the animation speed. The rain is also coloured dark blue using the SetConsoleTextAttribute. 
 
@@ -376,3 +376,5 @@ Overall, the project was a really enjoyable experience, and I would be lying if 
 [4] FreeSound, artifact, "lightning_strike.wav", January 2007, [Online]. Available: https://freesound.org/people/artifact/sounds/29675/
 
 [5] cppreference.com, "c++ reference", March 2024, [Online]. Available: https://en.cppreference.com/w/
+
+[6] Stack Overflow, "programmatically create thunder sound that covers specific duration", March 2005, [Online]. Available: https://stackoverflow.com/questions/27668722/programmatically-create-thunder-sound-that-covers-specific-duration
