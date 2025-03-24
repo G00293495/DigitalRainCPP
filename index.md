@@ -367,8 +367,12 @@ Overall, the project was a really enjoyable experience, and I would be lying if 
 <img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/sleet.png" width="500" height="400">
 
 # References
-[1] Using winmm library in C. Stack Overflow. [Online] Available: https://stackoverflow.com/questions/14014141/using-winmm-library-in-c
+[1] Stack Overflow, "Using winmm library in C", January 2005, [Online] Available: https://stackoverflow.com/questions/14014141/using-winmm-library-in-c
 
-[2] ChatGPT. (GPT-4). Open AI. [Online]. Available: https://chatgpt.com/
+[2] ChatGPT. (GPT-4). Open AI, Accessed March 2025, [Online]. Available: https://chatgpt.com/
 
-[3] Windows. Create and remove project dependencies. [Online]. Available: https://learn.microsoft.com/en-us/visualstudio/ide/how-to-create-and-remove-project-dependencies?view=vs-2022
+[3] Windows. "Create and remove project dependencies", March 2025, [Online]. Available: https://learn.microsoft.com/en-us/visualstudio/ide/how-to-create-and-remove-project-dependencies?view=vs-2022
+
+[4] FreeSound, artifact, "lightning_strike.wav", January 2007, [Online]. Available: https://freesound.org/people/artifact/sounds/29675/
+
+[5] cppreference.com, "c++ reference", March 2024, [Online]. Available: https://en.cppreference.com/w/
