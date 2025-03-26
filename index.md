@@ -364,7 +364,7 @@ Overall, the project was a really enjoyable experience, and I would be lying if 
 
 # Heavy Rain
 
-<img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/heavyrain.gif" width="500" height="400">
+<img src="https://raw.githubusercontent.com/G00293495/DigitalRainCPP/main/docs/assets/images/heavyrain.png" width="500" height="400">
 
 # Sleet
 
