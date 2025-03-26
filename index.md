@@ -297,7 +297,7 @@ while (true) {
 ```
  
 # Test
-- For this project, I implemented a unit test to verify the functionality of the displayStartMenu() method in my Digital Rain Simulation. This method is responsible for displaying the start menu, where users can choose between different weather types.
+- For this project, I implemented a unit test to verify the functionality of the displayStartMenu() method in my Digital Rain Simulation. I used ChatGPT to assist me with this section.[2] This method is responsible for displaying the start menu, where users can choose between different weather types.
 
 - Purpose of the Test
 The goal of this test is to ensure that the correct text appears when displayStartMenu() is called. Since this function prints to the console, I need to capture and verify its output.
