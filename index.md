@@ -125,7 +125,11 @@ void Rain::displayStartMenu() {
     )";
 }
 ```
-- The start function serves as the entry point for user interaction in the Digital Rain simulation. It begins by displaying the start menu, which provides users with a choice of weather effects. The function then waits for user input, capturing a single character. Depending on whether the user enters 'S' (or 's') for sleet or 'H' (or 'h') for heavy rain, the function will call the respective generation function (generateSleet() or generateRain()). If the input does not match either of these valid options, an error message is displayed, informing the user of the invalid input, and the program exits. This approach ensures that only valid commands trigger the rain effects while maintaining a simple interface.
+- The start function serves as the entry point for user interaction in the Digital Rain simulation. It begins by displaying the start menu, which provides users with a choice of weather effects.
+
+- The function then waits for user input, capturing a single character. Depending on whether the user enters 'S' (or 's') for sleet or 'H' (or 'h') for heavy rain, the function will call the respective generation function (generateSleet() or generateRain()). If the input does not match either of these valid options, an error message is displayed, informing the user of the invalid input, and the program exits.
+
+- This approach ensures that only valid commands trigger the rain effects while maintaining a simple interface.
 
 ```
 void Rain::start() {
@@ -147,7 +151,7 @@ void Rain::start() {
 }
 ```
 
-- DrawClouds uses the GoToXY function. This function is used as a utility function to set the cursor position in the console window. This allows me to have control over where the text is printed on the screen, allowing me to draw cool clouds and start the rain in certain positions. DrawClouds contains 2 clouds, cloud 1 and cloud 2. Cloud 1 is positioned at one fourth of the screen width and cloud 2 is positioned at 2 fourhts of the screen width. The GoToXY function is used multiple times to draw the cloud art that I found on the ASCII art website. 
+- DrawClouds uses the GoToXY function. This function is used as a utility function to set the cursor position in the console window. This allows me to have control over where the text is printed on the screen, allowing me to draw cool clouds and start the rain in certain positions. DrawClouds contains 2 clouds, cloud 1 and cloud 2. Cloud 1 is positioned at one fourth of the screen width and cloud 2 is positioned at 2 fourths of the screen width. The GoToXY function is used multiple times to draw the cloud art that I found on the ASCII art website.[7]
 
 ```
 void GotoXY(int x, int y) {
@@ -378,3 +382,5 @@ Overall, the project was a really enjoyable experience, and I would be lying if 
 [5] cppreference.com, "c++ reference", March 2024, [Online]. Available: https://en.cppreference.com/w/
 
 [6] Stack Overflow, "programmatically create thunder sound that covers specific duration", March 2005, [Online]. Available: https://stackoverflow.com/questions/27668722/programmatically-create-thunder-sound-that-covers-specific-duration
+
+[7] ASCII Art Archive, "ASCII Art Archive", March 2025, [Online], Available : https://www.asciiart.eu/
