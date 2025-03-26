@@ -10,7 +10,7 @@ tags: cpp coding project
 Welcome to my project blog. I will be showing you my application called "Digital Rain." Inspired by the iconic rain effect from the Matrix movies, this program simulates different types of weather, including heavy rain and sleet, right in your terminal. 
 
 
-Using modern C++ features and libraries, such as <random> for advanced random number generation and Windows API for console manipulation, this project demonstrates how creativity and expressing yourself can be achieved in C++ programming! 
+Using modern C++ features and libraries, such as random for advanced random number generation and Windows API for console manipulation, this project demonstrates how creativity and expressing yourself can be achieved in C++ programming! 
 
 
 I will now dive into the code deeper and show you how Digital Rain brings traditional Irish weather to life on your screen!
