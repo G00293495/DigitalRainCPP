@@ -4,7 +4,4 @@ author:
   name: Paddy Downey
   email: G00392495@atu.ie
 
-# Build settings
-remote_theme: jekyll/minima
-
 theme: jekyll-theme-midnight
